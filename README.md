@@ -1,44 +1,60 @@
-# ZeroDev Examples
+# ZeroDev Token Shop
 
-## Setup and Installation
+Uma interface simples implementada com ZeroDev para demonstrar funcionalidades de autenticação Ethereum, recompensas de tokens e uma loja virtual.
 
-Follow these steps to get this project up and running on your local machine:
+## Funcionalidades
 
-1. **Clone the repository**
+- **Sistema de Login**: Autenticação usando ZeroDev para carteiras Ethereum
+- **Sistema de Recompensa**: 10 tokens concedidos automaticamente no primeiro login
+- **Loja de Produtos**: Lista de produtos que podem ser adquiridos usando tokens
+- **Histórico de Compras**: Armazena e exibe as compras realizadas pelo usuário
 
-   Use the following command to clone this repository to your local machine:
+## Tecnologias Utilizadas
 
-   ```bash
-   git clone git@github.com:zerodevapp/zerodev-examples.git
-   ```
+- React / Next.js
+- TypeScript
+- Tailwind CSS
+- ZeroDev para autenticação Web3
+- Viem para interações com blockchain
 
-2. **Install dependencies**
+## Configuração do Projeto
 
-   Navigate to the project directory and install the dependencies:
+1. Clone o repositório:
+```bash
+git clone [URL_DO_REPOSITORIO]
+cd zerodev-token-shop
+```
 
-   ```bash
-   cd zerodev-examples
-   npm install
-   ```
+2. Instale as dependências:
+```bash
+npm install
+```
 
-3. **Setup environment variables**
+3. Crie um arquivo `.env.local` na raiz do projeto com o seguinte conteúdo:
+```
+NEXT_PUBLIC_RPC_URL=https://rpc-sepolia.rockx.com
+```
 
-   Copy the `.env.example` file to `.env` and fill in the values:
+4. Execute o projeto:
+```bash
+npm run dev
+```
 
-   ```bash
-    cp .env.example .env
-    ```
+5. Acesse a aplicação em `http://localhost:3000`
 
-   For `ZERODEV_RPC`, you can get it from [the ZeroDev dashboard](https://dashboard.zerodev.app/) by creating a project. The examples use Sepolia, so make sure to create a project for Sepolia.
-   
-   The `PRIVATE_KEY` can be any valid Ethereum private key.  You should use a random test key.
-   
-   If you want to run the examples on another network, make sure to update the `chain` object in the code (some examples use the chain object in [./utils.ts](./utils.ts) so you'd need to update it there).
+## Como Usar
 
-4. **Run the script**
+1. Clique no botão "Connect Wallet" para fazer login
+2. No primeiro login, você receberá automaticamente 10 tokens
+3. Navegue pela loja e compre produtos usando seus tokens
+4. Consulte seu histórico de compras na parte inferior da página
 
-   Run any of the example scripts using the following command:
+## Observações
 
-   ```bash
-   npx ts-node path/to/script.ts
-   ```
+- Este projeto funciona na rede Ethereum Sepolia
+- As operações são processadas através da infraestrutura ZeroDev, que facilita a experiência de uso de carteiras
+- Os dados de usuário são armazenados localmente no navegador (localStorage)
+
+## Licença
+
+MIT
